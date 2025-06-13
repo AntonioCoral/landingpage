@@ -74,7 +74,7 @@ normalizeSubdomain(value: string): string {
   this.generalError = null;
 
 
-  this.http.post<any>('http://localhost:500/api/auth/register', payload).subscribe({
+  this.http.post<any>('https://codeconnectivity.com/api/api/auth/register', payload).subscribe({
     next: () => this.step = 3,
     error: (err) => {
       const message = err?.error?.message || '';
