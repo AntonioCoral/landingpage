@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Estilos para el toastr de éxito */
+.toast-success {
+  background-color: #33d849 !important; /* Color verde personalizado */
+  color: white !important;
+}
+
+/* Opcional: Cambiar estilo de la barra de progreso */
+.toast-success .toast-progress {
+  background-color: white !important;
+}

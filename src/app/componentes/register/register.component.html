@@ -1,0 +1,140 @@
+
+
+<div class="min-h-screen bg-gray-50 p-4 flex flex-col items-center justify-center animate-fade-in">
+  <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl p-6">
+    <h2 class="text-2xl font-bold text-center mb-6 text-yellow-600">
+      ✨ Crea tu Menú Digital Gratis por 7 días
+    </h2>
+
+    <!-- Paso 1: Datos de la Empresa -->
+<form *ngIf="step === 1" [formGroup]="companyForm" (ngSubmit)="goToStep2()" class="space-y-4">
+    <div *ngIf="companyFormError" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+    <strong class="font-bold">Error:</strong>
+    <span class="block sm:inline">{{ companyFormError }}</span>
+  </div>
+
+  
+ <!-- Nombre de la Empresa -->
+<div>
+  <label class="block font-semibold">Ingresa el nombre de la Empresa</label>
+  <input formControlName="name" class="input" type="text" placeholder="Ej: Taquería El Buen Sabor" />
+  <p *ngIf="companyForm.get('name')?.hasError('required') && companyForm.get('name')?.touched" class="text-red-500 text-sm">
+    Nombre requerido
+  </p>
+  <p *ngIf="companyForm.get('name')?.hasError('exists')" class="text-red-500 text-sm">
+    Ya existe una empresa con ese nombre.
+  </p>
+</div>
+
+<!-- Correo -->
+<div>
+  <label class="block font-semibold">Ingresa el Correo de Contacto</label>
+  <input formControlName="contactEmail" class="input" type="email" placeholder="ejemplo@correo.com" />
+  <p *ngIf="companyForm.get('contactEmail')?.hasError('email') && companyForm.get('contactEmail')?.touched" class="text-red-500 text-sm">
+    Correo inválido
+  </p>
+  <p *ngIf="companyForm.get('contactEmail')?.hasError('exists')" class="text-red-500 text-sm">
+    Ese correo ya está registrado.
+  </p>
+</div>
+
+<!-- Dirección -->
+<div>
+  <label class="block font-semibold">Dirección de la Empresa</label>
+  <input formControlName="address" class="input" type="text" placeholder="Ej: Calle 5, Col. Centro, CDMX" />
+  <p *ngIf="companyForm.get('address')?.hasError('required') && companyForm.get('address')?.touched" class="text-red-500 text-sm">
+    Dirección requerida
+  </p>
+</div>
+
+
+<!-- Subdominio -->
+<div>
+  <label class="block font-semibold">Subdominio</label>
+  <div class="flex items-center gap-2">
+    <input formControlName="subdomain" class="input bg-gray-100 cursor-not-allowed flex-1" type="text" placeholder="Ej: mibusiness" />
+    
+    <button type="button" (click)="copySubdomainLink()" class="p-2 rounded hover:bg-gray-200" title="Copiar enlace">
+      <!-- Icono de copiar SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2M16 8h2a2 2 0 012 2v8a2 2 0 01-2 2h-8a2 2 0 01-2-2v-2" />
+      </svg>
+    </button>
+  </div>
+
+  <p class="text-xs text-gray-500 mt-1">
+    Tu menú estará en: <strong>https://app.bussines.cloud/{{ companyForm.get('subdomain')?.value }}</strong>
+  </p>
+</div>
+
+
+  <button class="btn w-full">Continuar al Registro</button>
+</form>
+
+
+
+    
+
+    <!-- Paso 2: Registro del Usuario -->
+    <form *ngIf="step === 2" [formGroup]="userForm" (ngSubmit)="submitForm()" class="space-y-4">
+      <div *ngIf="generalError" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        <strong class="font-bold">Error:</strong>
+        <span class="block sm:inline">{{ generalError }}</span>
+      </div>
+
+      <!-- Usuario -->
+      <div>
+        <label class="block font-semibold">Nombre de Usuario</label>
+        <input formControlName="username" class="input" type="text" placeholder="Ej: admin" />
+        <p *ngIf="userForm.get('username')?.hasError('required') && userForm.get('username')?.touched" class="text-red-500 text-sm">
+          El nombre de usuario es requerido
+        </p>
+        <p *ngIf="userForm.get('username')?.hasError('exists')" class="text-red-500 text-sm">
+          Este nombre de usuario ya está en uso.
+        </p>
+      </div>
+
+      <div>
+        <label class="block font-semibold">Contraseña</label>
+        <input formControlName="password" class="input" type="password" placeholder="Mínimo 6 caracteres" />
+        <p *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" class="text-red-500 text-sm">Contraseña muy corta</p>
+      </div>
+
+      <div class="flex justify-between">
+        <button type="button" class="btn-secondary" (click)="step = 1">Volver</button>
+        <button class="btn">Crear Cuenta</button>
+      </div>
+    </form>
+
+    <!-- Confirmación -->
+    <div *ngIf="step === 3" class="text-center space-y-4">
+      <div class="text-green-600 text-4xl">
+        🎉
+      </div>
+      <h3 class="text-xl font-bold">¡Felicidades!</h3>
+      <p>Tu empresa ya tiene acceso al panel administrativo y menú digital gratis por 7 días.</p>
+      <a class="btn" href="https://codeconnectivity.com">Ir al Panel Administrativo</a>
+    </div>
+  </div>
+</div>
+
+<!-- Estilos reutilizables -->
+<style>
+  .input {
+    @apply w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400;
+  }
+  .btn {
+    @apply bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300;
+  }
+  .btn-secondary {
+    @apply bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 px-4 rounded-lg;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

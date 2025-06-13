@@ -1,0 +1,160 @@
+<!-- register.component.html -->
+<!-- register.component.html (Landing Page Extendida) -->
+<div class="min-h-screen bg-gray-50">
+  <!-- Hero Section -->
+  <section class="bg-white shadow-md p-8 text-center animate-fade-in">
+    <h1 class="text-4xl md:text-6xl p-4 font-extrabold text-yellow-400">Digitaliza tu negocio hoy</h1>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-yellow-600">Crea tu Menú Digital Gratis</h2>
+    <p class="mt-2 text-gray-600 text-lg">Accede a un panel profesional para tu negocio sin pagar nada la primera semana.</p>
+    <a routerLink="/register" class="inline-block mt-6 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+      Comienza Gratis
+    </a>
+  </section>
+
+    <!-- Requisitos para aprovechar el servicio -->
+  <section class="bg-yellow-50 py-14 px-4" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-10 text-yellow-700">¿Este servicio es ideal para tu negocio?</h2>
+
+    <p class="text-center text-gray-700 max-w-3xl mx-auto mb-10 text-lg">
+      Para aprovechar al máximo nuestra plataforma, asegúrate de contar con lo siguiente:
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- WhatsApp -->
+      <div class="p-6 bg-white rounded-lg shadow-md text-center" data-aos="zoom-in">
+        <i class="fab fa-whatsapp text-green-500 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Manejo de pedidos por WhatsApp</h3>
+        <p class="text-sm text-gray-600">Tus clientes deben enviarte sus pedidos vía WhatsApp para recibirlos de forma clara y organizada.</p>
+      </div>
+
+      <!-- Repartidores -->
+      <div class="p-6 bg-white rounded-lg shadow-md text-center" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-motorcycle text-yellow-500 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Repartidores propios</h3>
+        <p class="text-sm text-gray-600">Debes contar con repartidores para poder gestionar las entregas desde tu panel administrativo.</p>
+      </div>
+
+      <!-- Servicio a domicilio -->
+      <div class="p-6 bg-white rounded-lg shadow-md text-center" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-home text-pink-500 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Servicio a domicilio</h3>
+        <p class="text-sm text-gray-600">Tu negocio debe ofrecer envíos a domicilio para poder aprovechar el flujo de pedidos automatizados.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ¿Cómo funciona? -->
+  <section class="bg-gray-100 py-10">
+  <h2 class="text-2xl font-bold text-center mb-10">¿Cómo funciona?</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
+    <div class="text-center">
+      <i class="fas fa-link text-yellow-500 text-4xl mb-4"></i>
+      <h3 class="font-semibold text-lg">Comparte el link del menú</h3>
+      <p class="text-sm text-gray-600">El cliente entra sin instalar apps, directo desde el link personalizado.</p>
+    </div>
+    <div class="text-center">
+      <i class="fas fa-receipt text-yellow-500 text-4xl mb-4"></i>
+      <h3 class="font-semibold text-lg">El cliente hace su pedido</h3>
+      <p class="text-sm text-gray-600">Elige productos, datos de envío y forma de pago.</p>
+    </div>
+    <div class="text-center">
+      <i class="fas fa-bell text-yellow-500 text-4xl mb-4"></i>
+      <h3 class="font-semibold text-lg">Recibes la comanda</h3>
+      <p class="text-sm text-gray-600">Te llega por WhatsApp todo limpio y organizado.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Video demostrativo -->
+<div class="mt-10 text-center">
+  <h3 class="text-lg font-semibold mb-6">Mira cómo funciona en acción</h3>
+
+  <div class="relative w-full max-w-3xl mx-auto aspect-video rounded-xl shadow-lg overflow-hidden cursor-pointer group" (click)="showVideo = true">
+    <img *ngIf="!showVideo" src="assets/background.png" alt="Demo del servicio"
+         class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80">
+    <div *ngIf="!showVideo" class="absolute inset-0 flex items-center justify-center">
+      <div class="bg-white p-3 rounded-full shadow-md">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Reemplazo por iframe cuando da clic -->
+    <iframe *ngIf="showVideo"
+            class="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/rbyINqUlJa8?autoplay=1"
+            title="Video Demostrativo"
+            frameborder="0"
+            allow="autoplay; encrypted-media; clipboard-write; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Beneficios -->
+  <section class="py-12 px-4 max-w-5xl mx-auto">
+  <h2 class="text-2xl font-bold text-center mb-10">¿Por qué elegirnos?</h2>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="flex items-start space-x-4">
+      <i class="fas fa-clock text-yellow-500 text-2xl mt-1"></i>
+      <div>
+        <h4 class="font-semibold">Ahorra tiempo</h4>
+        <p class="text-sm text-gray-600">Recibe pedidos listos sin llamadas ni confusiones.</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-4">
+      <i class="fab fa-whatsapp text-green-500 text-2xl mt-1"></i>
+      <div>
+        <h4 class="font-semibold">WhatsApp integrado</h4>
+        <p class="text-sm text-gray-600">Tus pedidos llegan directo a tu celular con toda la información.</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-4">
+      <i class="fas fa-mobile-alt text-yellow-500 text-2xl mt-1"></i>
+      <div>
+        <h4 class="font-semibold">Diseño adaptable</h4>
+        <p class="text-sm text-gray-600">Compatible con celulares, tablets y computadoras.</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-4">
+      <i class="fas fa-gift text-pink-500 text-2xl mt-1"></i>
+      <div>
+        <h4 class="font-semibold">7 días gratis</h4>
+        <p class="text-sm text-gray-600">Sin tarjetas, sin compromiso. Solo pruebas tu menú.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- CTA final -->
+  <section class="text-center py-10 bg-yellow-50">
+    <h2 class="text-2xl font-bold mb-4">¿Listo para digitalizar tu negocio?</h2>
+    <p class="mb-6 text-gray-700">Hazlo hoy mismo con nuestra plataforma profesional y sencilla.</p>
+    <div class="">
+      <a href="/register" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg transition">Crear Menú Digital Gratis</a>
+    </div>
+  </section>
+</div>
+
+
+<style>
+  .btn {
+    @apply bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full transition duration-300;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

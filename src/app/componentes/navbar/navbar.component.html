@@ -1,0 +1,40 @@
+<nav class="w-full bg-white shadow-md fixed top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+    <img src="assets/logotransparente.png" alt="Logo" class="h-8 w-8 object-contain" />
+    <span class="text-2xl font-bold text-yellow-600">MenúExpress</span>
+  </div>
+
+
+    <!-- Menú en pantallas grandes -->
+    <ul class="hidden md:flex space-x-6 font-semibold">
+      <li><a href="#home" class="hover:text-yellow-600 transition">Inicio</a></li>
+      <li><a href="#precios" class="hover:text-yellow-600 transition">Precios</a></li>
+      <li><a href="https://app.bussines.cloud/?subdomain=modaymas" class="hover:text-yellow-600 transition">Demo</a></li>
+      <li><a href="/panel" class="hover:text-yellow-600 transition">Nuestro Panel Admin</a></li>
+      <li><a href="/#contacto" class="hover:text-yellow-600 transition">Contáctanos</a></li>
+    </ul>
+
+    <!-- Botones en pantallas grandes -->
+    <div class="hidden md:flex space-x-4">
+      <a href="/register" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg transition">Crear Cuenta</a>
+      <a href="https://codeconnectivity.com" class="px-4 py-2 border border-yellow-500 text-yellow-500 rounded-lg hover:bg-yellow-50">Iniciar Sesión</a>
+    </div>
+
+    <!-- Botón hamburguesa para móviles -->
+    <button (click)="toggleMenu()" class="md:hidden text-yellow-600 text-3xl">
+      ☰
+    </button>
+  </div>
+
+  <!-- Menú móvil desplegable -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-white px-4 pb-4 space-y-4 shadow-md">
+    <a href="#home" class="block font-semibold hover:text-yellow-600">Inicio</a>
+    <a href="#precios" class="block font-semibold hover:text-yellow-600">Precios</a>
+    <a href="https://app.bussines.cloud/?subdomain=modaymas" class="block font-semibold hover:text-yellow-600">Demo</a>
+    <a href="/panel" class="block font-semibold hover:text-yellow-600">Nuestro Panel Admin</a>
+    <a href="/#contacto" class="block font-semibold hover:text-yellow-600">Contáctanos</a>
+    <a href="/register" class="block font-semibold text-yellow-500">Crear Cuenta</a>
+    <a href="https://codeconnectivity.com" class="block font-semibold text-yellow-500">Iniciar Sesión</a>
+  </div>
+</nav>
