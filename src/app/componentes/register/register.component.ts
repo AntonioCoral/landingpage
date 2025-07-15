@@ -119,7 +119,7 @@ normalizeSubdomain(value: string): string {
       const subdomain = this.companyForm.get('subdomain')?.value;
       if (!subdomain) return;
 
-      const fullLink = `https://app.bussines.cloud/${subdomain}`;
+      const fullLink = `https://app.bussines.cloud/?subdomain=${subdomain}`;
       navigator.clipboard.writeText(fullLink)
         .then(() => {
           this.toastr.success('Enlace copiado al portapapeles');
