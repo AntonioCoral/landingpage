@@ -16,6 +16,7 @@ import { FooterComponent } from "./componentes/footer/footer.component";
 import { ContactoComponent } from "./componentes/contacto/contacto.component";
 import { HomeComponent } from "./componentes/home/home.component";
 import { InicioComponent } from "./componentes/inicio/inicio.component";
+import { OportunidadesComponent } from "./componentes/oportunidades/oportunidades.component";
 
 
 
@@ -28,6 +29,7 @@ import { InicioComponent } from "./componentes/inicio/inicio.component";
     PreciosComponent,
     FooterComponent,
     ContactoComponent,
+    OportunidadesComponent,
     HomeComponent,
     InicioComponent
   ],

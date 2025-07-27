@@ -66,6 +66,11 @@
   <p class="text-xs text-gray-500 mt-1">
     Tu menú estará en: <strong>https://app.bussines.cloud/?subdomain={{ companyForm.get('subdomain')?.value }}</strong>
   </p>
+  <img *ngIf="qrCodeDataUrl" [src]="qrCodeDataUrl" class="mx-auto w-40 h-40 bg-white p-2 rounded shadow" alt="QR del menú" />
+  <button type="button" class="btn mt-2" (click)="generateQRCode()">Generar QR</button>
+  <button type="button" class="btn mt-2" (click)="downloadQRCode()">Descargar</button>
+
+
 </div>
 
 
@@ -114,6 +119,7 @@
       </div>
       <h3 class="text-xl font-bold">¡Felicidades!</h3>
       <p>Tu empresa ya tiene acceso al panel administrativo y menú digital gratis por 7 días.</p>
+    
       <a class="btn" href="https://codeconnectivity.com">Ir al Panel Administrativo</a>
     </div>
   </div>

@@ -1,0 +1,59 @@
+<section class="py-16 bg-gradient-to-b from-white to-gray-50" id="oportunidades">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-yellow-600 mb-10">🎯 Oportunidades para Todo Tipo de Negocios</h2>
+    <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+      Nuestro servicio se adapta perfectamente a múltiples giros de negocio. Haz que tus clientes puedan ordenar fácilmente desde tu Menú Digital.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div
+  *ngFor="let negocio of negocios"
+  class="relative w-full h-64 perspective"
+  (click)="toggleFlip(negocio)"
+>
+  <div
+    class="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d"
+    [ngClass]="{ 'rotate-y-180': negocio.flipped }"
+  >
+    <!-- Frente -->
+    <div
+      class="absolute inset-0 bg-white rounded-xl shadow-lg backface-hidden flex flex-col justify-between p-4"
+    >
+      <img [src]="negocio.icon" class="w-24 h-24 mx-auto mt-4 object-contain" alt="{{ negocio.title }} Icono" />
+      <h3 class="text-lg font-semibold text-gray-800 mt-4">{{ negocio.title }}</h3>
+    </div>
+    <div class="absolute inset-0 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center p-6 backface-hidden">
+  <ng-container *ngIf="negocio.title !== 'Más Negocios'; else iconoMasNegocios">
+    <img [src]="negocio.icon" class="w-16 h-16 mb-4" alt="{{ negocio.title }} Icono" />
+  </ng-container>
+
+  <!-- SVG para "Más Negocios" -->
+  <ng-template #iconoMasNegocios>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+         stroke-width="1.5" stroke="currentColor"
+         class="w-12 h-12 mb-4 text-yellow-600">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+  </ng-template>
+
+  <h3 class="text-xl font-semibold text-gray-800">{{ negocio.title }}</h3>
+</div>
+
+
+    <!-- Reverso -->
+    <div
+      class="absolute inset-0 bg-yellow-100 rounded-xl shadow-lg transform rotate-y-180 backface-hidden flex items-center justify-center p-6"
+    >
+      <p class="text-gray-700 text-sm text-center leading-relaxed">
+        {{ negocio.description }}
+      </p>
+
+      
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>

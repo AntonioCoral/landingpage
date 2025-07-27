@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import * as QRCode from 'qrcode';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,6 +18,7 @@ export class RegisterComponent {
   companyId!: number;
   generalError: string | null = null;
   companyFormError: string | null = null;
+  qrCodeDataUrl: string = '';
 
 
 
@@ -129,5 +131,38 @@ normalizeSubdomain(value: string): string {
         });
     }
 
-  
+    generateQRCode(): void {
+    const url = `https://app.bussines.cloud/?subdomain=${this.companyForm.get('subdomain')?.value}`;
+    QRCode.toDataURL(url, { errorCorrectionLevel: 'H' }, (err, url) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      this.qrCodeDataUrl = url;
+    });
+  }
+    downloadQRCode(): void {
+      // Extraer solo la parte base64
+      const base64 = this.qrCodeDataUrl.split(',')[1];
+      const binary = atob(base64);
+      const array = [];
+
+      for (let i = 0; i < binary.length; i++) {
+        array.push(binary.charCodeAt(i));
+      }
+
+      const blob = new Blob([new Uint8Array(array)], { type: 'image/png' });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'menu-digital-qr.png';
+      link.click();
+
+      // Limpieza
+      URL.revokeObjectURL(url);
+    }
+
+
+      
 }
