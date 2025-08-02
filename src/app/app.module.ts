@@ -18,6 +18,7 @@ import { HomeComponent } from "./componentes/home/home.component";
 import { InicioComponent } from "./componentes/inicio/inicio.component";
 import { OportunidadesComponent } from "./componentes/oportunidades/oportunidades.component";
 import { BeneficiosComponent } from "./componentes/beneficios/beneficios.component";
+import { PanelAdminComponent } from "./componentes/panel-admin/panel-admin.component";
 
 
 
@@ -30,6 +31,7 @@ import { BeneficiosComponent } from "./componentes/beneficios/beneficios.compone
     PreciosComponent,
     FooterComponent,
     ContactoComponent,
+    PanelAdminComponent,
     OportunidadesComponent,
     BeneficiosComponent,
     HomeComponent,
