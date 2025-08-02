@@ -17,6 +17,7 @@ import { ContactoComponent } from "./componentes/contacto/contacto.component";
 import { HomeComponent } from "./componentes/home/home.component";
 import { InicioComponent } from "./componentes/inicio/inicio.component";
 import { OportunidadesComponent } from "./componentes/oportunidades/oportunidades.component";
+import { BeneficiosComponent } from "./componentes/beneficios/beneficios.component";
 
 
 
@@ -30,6 +31,7 @@ import { OportunidadesComponent } from "./componentes/oportunidades/oportunidade
     FooterComponent,
     ContactoComponent,
     OportunidadesComponent,
+    BeneficiosComponent,
     HomeComponent,
     InicioComponent
   ],

@@ -1,62 +1,113 @@
-<!-- ¿Cómo funciona nuestro Panel administrativo? -->
-<section class="bg-white py-14 px-4" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">¿Cómo funciona nuestro Panel Administrativo?</h2>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-    
-    <!-- Productos -->
-    <div class="p-6 bg-gray-50 rounded-lg shadow-md" data-aos="fade-up">
-      <div class="flex items-center space-x-3 mb-2">
-        <i class="fas fa-box text-yellow-500 text-2xl"></i>
-        <h3 class="text-xl font-semibold text-yellow-600">Administra tus productos</h3>
-      </div>
-      <p class="text-gray-600 text-sm">Agrega, edita o elimina productos fácilmente. Controla precios, imágenes y descripciones desde un solo lugar.</p>
+<section class="bg-white py-16 px-4" id="panel-admin" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">
+      🛠️ ¿Cómo funciona nuestro Panel Administrativo?
+    </h2>
+
+    <!-- Bloque informativo principal -->
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg shadow-md mb-12 space-y-2">
+      <p class="text-lg font-semibold text-gray-800">¿Ya creaste tu cuenta?</p>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>Ingresa a <span class="text-blue-600 font-semibold">www.bussines.cloud</span> y da clic en <strong>Iniciar Sesión</strong>.</li>
+        <li>Descarga la aplicación o también puedes ingresar desde tu computadora o celular con el link: <span class="text-blue-600 font-semibold">www.codeconnectivity.com</span>.</li>
+        <li>Inicia sesión con las credenciales que registraste.</li>
+        <li>Comienza a subir tus categorías, productos, banners y promociones desde el panel.</li>
+      </ul>
     </div>
 
-    <!-- Categorías -->
-    <div class="p-6 bg-gray-50 rounded-lg shadow-md" data-aos="fade-up">
-      <div class="flex items-center space-x-3 mb-2">
-        <i class="fas fa-tags text-yellow-500 text-2xl"></i>
-        <h3 class="text-xl font-semibold text-yellow-600">Administra tus categorías</h3>
+    <!-- Cards del panel -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Producto -->
+      <div class="p-6 bg-gray-50 rounded-lg shadow-md flex gap-4 items-start">
+        <div class="text-yellow-500 w-10 h-10">
+          <!-- Box icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 8.25l7.5 4.5 7.5-4.5M4.5 15.75l7.5 4.5 7.5-4.5M4.5 8.25v7.5m15-7.5v7.5" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Administra tus productos</h3>
+          <img src="assets/adminproduct.png" alt="admin-product">
+          <p class="text-gray-600 text-sm">Agrega, edita o elimina productos fácilmente. Controla precios, imágenes y descripciones desde un solo lugar.</p>
+        </div>
       </div>
-      <p class="text-gray-600 text-sm">Organiza tus productos para que tus clientes naveguen más rápido y encuentren lo que buscan.</p>
-    </div>
 
-    <!-- Banners -->
-    <div class="p-6 bg-gray-50 rounded-lg shadow-md" data-aos="fade-up">
-      <div class="flex items-center space-x-3 mb-2">
-        <i class="fas fa-image text-yellow-500 text-2xl"></i>
-        <h3 class="text-xl font-semibold text-yellow-600">Administra tus banners</h3>
+      <!-- Categorías -->
+      <div class="p-6 bg-gray-50 rounded-lg shadow-md flex gap-4 items-start">
+        <div class="text-yellow-500 w-10 h-10">
+          <!-- Tags icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3h9a1.5 1.5 0 011.5 1.5v15a.75.75 0 01-1.28.53L12 15.75l-4.72 4.28A.75.75 0 016 19.5v-15A1.5 1.5 0 017.5 3z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Administra tus categorías</h3>
+          <img src="assets/admincategoria.png" alt="admin-categoria">
+          <p class="text-gray-600 text-sm">Organiza tus productos para que tus clientes naveguen más rápido y encuentren lo que buscan.</p>
+        </div>
       </div>
-      <p class="text-gray-600 text-sm">Destaca promociones especiales, eventos o productos con banners visuales en tu menú digital.</p>
-    </div>
 
-    <!-- Información empresa -->
-    <div class="p-6 bg-gray-50 rounded-lg shadow-md" data-aos="fade-up">
-      <div class="flex items-center space-x-3 mb-2">
-        <i class="fas fa-building text-yellow-500 text-2xl"></i>
-        <h3 class="text-xl font-semibold text-yellow-600">Configura la información de tu empresa</h3>
+      <!-- Banners -->
+      <div class="p-6 bg-gray-50 rounded-lg shadow-md flex gap-4 items-start">
+        <div class="text-yellow-500 w-10 h-10">
+          <!-- Image icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25v13.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V5.25zM12 10.5l-4.5 6h9l-4.5-6z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Administra tus banners</h3>
+          <img src="assets/adminbanner.png" alt="admin-banner">
+          <p class="text-gray-600 text-sm">Destaca promociones especiales, eventos o productos con banners visuales en tu menú digital.</p>
+        </div>
       </div>
-      <p class="text-gray-600 text-sm">Edita datos bancarios, horarios, número de WhatsApp y más, para personalizar tu menú al 100%.</p>
-    </div>
 
-    <!-- Órdenes -->
-    <div class="p-6 bg-gray-50 rounded-lg shadow-md" data-aos="fade-up">
-      <div class="flex items-center space-x-3 mb-2">
-        <i class="fas fa-clipboard-list text-yellow-500 text-2xl"></i>
-        <h3 class="text-xl font-semibold text-yellow-600">Administra tus órdenes</h3>
+      <!-- Información empresa -->
+      <div class="p-6 bg-gray-50 rounded-lg shadow-md flex gap-4 items-start">
+        <div class="text-yellow-500 w-10 h-10">
+          <!-- Building icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5h15M4.5 10.5v9m0-9V4.5h15v6m0 0v9M9 21v-6h6v6" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Configura la información de tu empresa</h3>
+          <img src="assets/admininfo.png" alt="admin-informacion">
+          <p class="text-gray-600 text-sm">Edita datos bancarios, horarios, número de WhatsApp y más, para personalizar tu menú al 100%.</p>
+        </div>
       </div>
-      <p class="text-gray-600 text-sm">Crea, edita y gestiona cada pedido. Asigna repartidores y cambia el estado de entrega o liquidación fácilmente.</p>
-    </div>
 
-    <!-- Cortes de caja -->
-    <div class="p-6 bg-gray-50 rounded-lg shadow-md" data-aos="fade-up">
-      <div class="flex items-center space-x-3 mb-2">
-        <i class="fas fa-cash-register text-yellow-500 text-2xl"></i>
-        <h3 class="text-xl font-semibold text-yellow-600">Control total con cortes de caja</h3>
+      <!-- Órdenes -->
+      <div class="p-6 bg-gray-50 rounded-lg shadow-md flex gap-4 items-start">
+        <div class="text-yellow-500 w-10 h-10">
+          <!-- Clipboard icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1.5 1.5 0 011.5 1.5v.75H7.5V4.5A1.5 1.5 0 019 3zM7.5 6.75v13.5a.75.75 0 00.75.75h7.5a.75.75 0 00.75-.75V6.75H7.5z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Administra tus órdenes</h3>
+          <img src="assets/adminorder2.png" alt="admin-order2">
+          <img src="assets/adminorder1.png" alt="admin-order1">
+          <p class="text-gray-600 text-sm">Crea, edita y gestiona cada pedido. Asigna repartidores y cambia el estado de entrega o liquidación fácilmente.</p>
+        </div>
       </div>
-      <p class="text-gray-600 text-sm">Genera cortes de caja por turno. Ingresa efectivo por denominaciones, registra egresos y asegúrate de cuadrar al final.</p>
-    </div>
 
+      <!-- Cortes de caja -->
+      <div class="p-6 bg-gray-50 rounded-lg shadow-md flex gap-4 items-start">
+        <div class="text-yellow-500 w-10 h-10">
+          <!-- Cash Register icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 4.5h15v15h-15v-15zm3 3h9v3h-9v-3zM9 12h1.5v3H9v-3zm4.5 0H15v3h-1.5v-3z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Control total con cortes de caja</h3>
+          <img src="assets/creacorte.png" alt="Crear-corte">
+          <img src="assets/busquedacorte.png" alt="Busqueda-corte">
+          <p class="text-gray-600 text-sm">Genera cortes de caja por turno. Ingresa efectivo por denominaciones, registra egresos y asegúrate de cuadrar al final.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
